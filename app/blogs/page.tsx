@@ -8,11 +8,11 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
-import { unstable_noStore as noStore } from "next/cache";}
+import { unstable_noStore as noStore } from "next/cache";
 // Mock data for blog posts
 
 export default function BlogSelection() {
-  noStore()
+  noStore();
   useEffect(() => {
     document.title = "Blog Selection | Next.js Blog";
     async function fetchData() {
