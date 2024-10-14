@@ -39,12 +39,20 @@ export default function Header() {
           Contact
         </Link>
         {session ? (
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="/api/auth/signout"
-          >
-            Sign Out
-          </Link>
+          <>
+            <Link
+              className="text-sm font-medium hover:underline underline-offset-4"
+              href="/api/auth/signout"
+            >
+              Sign Out
+            </Link>
+            <Link
+              className="text-sm font-medium hover:underline underline-offset-4"
+              href="/create"
+            >
+              create
+            </Link>
+          </>
         ) : (
           <Link
             className="text-sm font-medium hover:underline underline-offset-4"
