@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { BookOpen, Search, User } from "lucide-react";
-
+import md from "./md.jpg";
+import Image from "next/image";
 export default function BlogLandingPage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -42,9 +42,9 @@ export default function BlogLandingPage() {
             </h2>
             <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
               <div className="group relative rounded-lg overflow-hidden bg-white dark:bg-gray-950 shadow-lg">
-                <Link href="#">
-                  <img
-                    src="/placeholder.svg?height=300&width=400"
+                <Link href={`/blog/${"cm27p7p8c0004nnrlu8nabo5t"}`}>
+                  <Image
+                    src={md}
                     alt="Blog post thumbnail"
                     className="w-full h-48 object-cover transition-all duration-300 group-hover:scale-105"
                     width={400}
@@ -52,19 +52,18 @@ export default function BlogLandingPage() {
                   />
                   <div className="p-4">
                     <h3 className="text-lg font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                      The Future of AI in Everyday Life
+                      deednendjde
                     </h3>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
-                      Exploring how artificial intelligence is shaping our daily
-                      routines and future innovations.
+                      edknedkndeknd
                     </p>
                   </div>
                 </Link>
               </div>
               <div className="group relative rounded-lg overflow-hidden bg-white dark:bg-gray-950 shadow-lg">
-                <Link href="#">
-                  <img
-                    src="/placeholder.svg?height=300&width=400"
+                <Link href={`/blog/${"cm28u3a4t0005nnrlqpaai52d"}`}>
+                  <Image
+                    src={md}
                     alt="Blog post thumbnail"
                     className="w-full h-48 object-cover transition-all duration-300 group-hover:scale-105"
                     width={400}
@@ -72,19 +71,18 @@ export default function BlogLandingPage() {
                   />
                   <div className="p-4">
                     <h3 className="text-lg font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                      Sustainable Tech: A Green Revolution
+                      My life in a nut shell
                     </h3>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
-                      Discover how technology is driving sustainability and
-                      combating climate change.
+                      Heloo everyone this is Hithesh.
                     </p>
                   </div>
                 </Link>
               </div>
               <div className="group relative rounded-lg overflow-hidden bg-white dark:bg-gray-950 shadow-lg">
-                <Link href="#">
-                  <img
-                    src="/placeholder.svg?height=300&width=400"
+                <Link href={`/blog/${"cm28zzg7v0000olmd6gzzrn20"}`}>
+                  <Image
+                    src={md}
                     alt="Blog post thumbnail"
                     className="w-full h-48 object-cover transition-all duration-300 group-hover:scale-105"
                     width={400}
@@ -92,11 +90,10 @@ export default function BlogLandingPage() {
                   />
                   <div className="p-4">
                     <h3 className="text-lg font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                      Cybersecurity in the Digital Age
+                      How to master web development
                     </h3>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
-                      Essential strategies to protect your digital life in an
-                      increasingly connected world.
+                      Web development the most in-demand skills today.
                     </p>
                   </div>
                 </Link>
