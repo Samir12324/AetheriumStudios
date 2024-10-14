@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { unstable_noStore as noStore } from "next/cache";
 // Mock data for blog posts
-
+//disabling data
 export default function BlogSelection() {
   noStore();
   useEffect(() => {
