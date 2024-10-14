@@ -15,16 +15,22 @@ export default function BlogSelection() {
   useEffect(() => {
     document.title = "Blog Selection | Next.js Blog";
     async function fetchData() {
-      const data = await fetch("/api/all",    {
-            method: "GET", // Optional, as GET is the default method
-            headers: {
-              'Cache-Control': 'no-cache'
-            }
-);
-      const posts = await data.json();
-      console.log(posts);
-      setblogpost(posts);
+      try {
+        const response = await fetch("/api/all", {
+          method: "GET", // Optional, as GET is the default method
+          headers: {
+            "Cache-Control": "no-cache",
+          },
+        });
+
+        const posts = await response.json(); // Parse the JSON response
+        console.log(posts);
+        setblogpost(posts); // Assuming setBlogPost is defined and used to update state
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     }
+
     fetchData();
   }, []);
 
