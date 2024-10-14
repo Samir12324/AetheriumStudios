@@ -17,10 +17,7 @@ export default function BlogSelection() {
     async function fetchData() {
       try {
         const response = await fetch("/api/all", {
-          method: "GET", // Optional, as GET is the default method
-          headers: {
-            "Cache-Control": "no-cache",
-          },
+          cache: "no-store",
         });
 
         const posts = await response.json(); // Parse the JSON response
