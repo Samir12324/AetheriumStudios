@@ -17,6 +17,7 @@ export default function BlogSelection() {
     async function fetchData() {
       const data = await fetch("/api/all");
       const posts = await data.json();
+      console.log(posts);
       setblogpost(posts);
     }
     fetchData();
