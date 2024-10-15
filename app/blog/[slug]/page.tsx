@@ -17,6 +17,23 @@ import { CalendarDays, MessageCircle, ThumbsUp } from "lucide-react";
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
   const [post, setPost] = useState([]);
+  const [comment, setComment] = useState("");
+
+  async function postComment() {
+    console.log("Hithesh");
+    const data = await fetch(`/api/comment`, {
+      method: "POST",
+      body: JSON.stringify({
+        comment: comment,
+        postid: params.slug,
+        author: post,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(data);
+  }
   useEffect(() => {
     async function loadComments() {
       const response = await fetch(`/api/sblog/${params.slug}`);
@@ -60,8 +77,26 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         <div className="space-y-4">
           <form className="mt-8">
             <h3 className="text-lg font-semibold mb-2">Leave a comment</h3>
-            <Textarea placeholder="Type your comment here." className="mb-4" />
-            <Button type="submit">Post Comment</Button>
+            <Textarea
+              placeholder="Type your comment here."
+              onChange={(event) => {
+                console.log(event.target.value);
+                setComment(event.target.value);
+              }}
+              className="mb-4"
+            />
+            <Button
+              type="submit"
+              onClick={(e) => {
+                e.preventDefault();
+                if (comment === "") {
+                  return;
+                }
+                postComment();
+              }}
+            >
+              Post Comment
+            </Button>
           </form>
           <Card>
             <CardHeader className="flex flex-row items-center gap-4">
