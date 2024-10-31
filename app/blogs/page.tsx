@@ -8,18 +8,16 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
-import { unstable_noStore as noStore } from "next/cache";
+//import { unstable_noStore as noStore } from "next/cache";
 // Mock data for blog posts
 //disabling data
 export default function BlogSelection() {
-  noStore();
+ // noStore();
   useEffect(() => {
     document.title = "Blog Selection | Next.js Blog";
     async function fetchData() {
       try {
-        const response = await fetch("/api/all", {
-          cache: "no-store",
-        });
+        const response = await fetch("/api/all");
 
         const posts = await response.json(); // Parse the JSON response
         console.log(posts);
