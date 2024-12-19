@@ -9,19 +9,17 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { unstable_noStore as noStore } from "next/cache";
-// Mock data for blog posts
-//disabling data
+
 export default function BlogSelection() {
   noStore();
   useEffect(() => {
-    document.title = "Blog Selection | Next.js Blog";
+    document.title = "Game Selection | VRealm Games";
     async function fetchData() {
       try {
         const response = await fetch("/api/all");
-
-        const posts = await response.json(); // Parse the JSON response
+        const posts = await response.json();
         console.log(posts);
-        setblogpost(posts); // Assuming setBlogPost is defined and used to update state
+        setblogpost(posts);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -33,24 +31,30 @@ export default function BlogSelection() {
   const [blogpost, setblogpost] = useState([]);
 
   return (
-    <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-6">Choose a Blog to Read</h1>
+    <div className="container z-50 mx-auto py-8 relative">
+      <h1 className="text-3xl font-bold mb-6 bg-gradient-to-r from-yellow-500 to-amber-300 bg-clip-text text-transparent">
+        Explore Our Game Collection
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {blogpost.map((post) => (
           <Card
             key={post.id}
-            className="hover:shadow-lg transition-shadow duration-300"
+            className="hover:shadow-amber-500/20 transition-all duration-300 bg-black border border-amber-900/50 group"
           >
             <CardHeader>
-              <CardTitle>{post?.title}</CardTitle>
-              <CardDescription>{post?.description}</CardDescription>
+              <CardTitle className="text-amber-400 group-hover:text-amber-300 transition-colors">
+                {post?.title}
+              </CardTitle>
+              <CardDescription className="text-amber-200/80">
+                {post?.description}
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <Link
                 href={`/blog/${post?.id}`}
-                className="inline-block bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors duration-200"
+                className="inline-block bg-amber-600 text-black font-semibold px-4 py-2 rounded-md hover:bg-amber-700 transition-colors duration-200"
               >
-                Read More
+                Learn More
               </Link>
             </CardContent>
           </Card>

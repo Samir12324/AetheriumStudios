@@ -13,6 +13,7 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Acme Blog",
@@ -30,7 +31,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <Header />
+       
           {children}
         </body>
       </SessionProvider>
