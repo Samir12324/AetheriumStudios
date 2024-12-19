@@ -27,7 +27,7 @@ export default function Header() {
         </Link>
         <Link
           className="text-sm font-medium text-yellow-100/80 hover:text-yellow-400 transition-colors"
-          href="/games"
+          href="/blogs"
         >
           Games
         </Link>
@@ -35,7 +35,7 @@ export default function Header() {
           className="text-sm font-medium text-yellow-100/80 hover:text-yellow-400 transition-colors"
           href="/about"
         >
-          About
+          create
         </Link>
         <Link
           className="text-sm font-medium text-yellow-100/80 hover:text-yellow-400 transition-colors"
