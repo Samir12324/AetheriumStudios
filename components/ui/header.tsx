@@ -3,7 +3,7 @@
 import { GamepadIcon } from "lucide-react";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
-
+import Image from "next/image";
 export default function Header() {
   const { data: session, status } = useSession();
   console.log(session);
@@ -14,10 +14,8 @@ export default function Header() {
         className="flex gap-2 items-center justify-center transition-transform hover:scale-105" 
         href="/"
       >
-        <GamepadIcon className="h-6 w-6 text-yellow-500" />
-        <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-200">
-          VRealm Games
-        </span>
+        <GamepadIcon className="h-6 w-6 text-yellow-500 " />
+        <Image src={"/logo.jpeg"} width={130} alt="Hall" height={130} className="mt-10" />
       </Link>
       
       <nav className="ml-auto flex gap-4 sm:gap-6">
