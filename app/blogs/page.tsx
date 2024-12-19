@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
   Card,
@@ -32,6 +33,18 @@ export default function BlogSelection() {
 
   return (
     <div className="container z-50 mx-auto py-8 relative">
+         <div className="fixed inset-0 w-full h-full   -z-50">
+        <Image
+          src="/image.png"  // Replace with your actual image path
+          alt="Background VR gaming"
+          fill
+          priority
+          className="object-cover"
+          quality={100}
+        />
+
+        {/* Overlay to ensure text readability */}
+      </div>
       <h1 className="text-3xl font-bold mb-6 bg-gradient-to-r from-yellow-500 to-amber-300 bg-clip-text text-transparent">
         Explore Our Game Collection
       </h1>
