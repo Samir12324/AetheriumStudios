@@ -16,8 +16,8 @@ const geistMono = localFont({
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Acme Blog",
-  description: "Making the blogging simpler",
+  title: "Aetherium Studios",
+  description: "Paving the Future of Gamingr",
 };
 
 export default function RootLayout({
